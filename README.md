@@ -1,35 +1,37 @@
 # 🎬 Video & Audio Downloader
 
-A lightweight, modern command-line video and audio downloader powered by [`yt-dlp`](https://github.com/yt-dlp/yt-dlp).
+A lightweight, modern CLI video and audio downloader powered by [`yt-dlp`](https://github.com/yt-dlp/yt-dlp).
 
-Supports high-definition merged video downloads, MP3 audio extraction, resolution selection, age-restricted/member-only content handling via cookie authentication, and automatic JavaScript challenge deciphering with Node.js.
+Supports high-definition merged MP4 video downloads, MP3 audio extraction with embedded album art and metadata, resolution picking, playlist detection, age-restricted/member-only content via cookie authentication, and automatic JavaScript deciphering with Node.js.
 
 ---
 
 ## ✨ Features
 
 - **Multi-Mode Downloads**:
-  - **Video + Audio**: Automatically downloads best video & audio streams and merges them losslessly.
-  - **Audio Only (MP3)**: Extracts audio and encodes to MP3 with selectable bitrates (320 kbps, 256 kbps, 192 kbps, 128 kbps).
+  - **Video + Audio**: Automatically downloads the best video & audio streams and losslessly merges them into a universally compatible **MP4**.
+  - **Audio Only (MP3)**: Extracts audio, converts to MP3 (up to 320 kbps), and embeds the **video thumbnail as album art** along with artist and title metadata tags.
   - **Video Only**: Downloads raw video stream without audio.
-- **Interactive Resolution Picker**: Choose your preferred quality (`1080p`, `720p`, `480p`, etc.) or default to highest available.
-- **Age-Restricted & Private Content Support**: Easily loads Netscape-format `cookies.txt` to access restricted videos.
-- **Node.js Integration**: Automatically leverages Node.js to solve YouTube's `n-sig` JavaScript deciphering challenges.
-- **Windows Double-Click Launcher**: Includes `run.bat` for quick one-click startup on Windows.
+- **📋 Automatic Clipboard Detection**: Copies a URL in your browser and it is automatically suggested when you open the program — just hit `Enter`!
+- **📑 Playlist Intelligence**: If you paste a link containing a playlist, the tool asks whether you want to download just the single video or the entire playlist.
+- **🎯 Resolution Picker**: Choose `1080p`, `720p`, `480p`, etc., or default to highest available.
+- **🔄 Batch / Continuous Mode**: Download multiple videos in a row without having to restart the script.
+- **📂 Open Downloads Folder**: Offers to open the destination folder in Windows Explorer right after downloading.
+- **🔒 Age-Restricted & Private Content**: Seamlessly loads Netscape-format `cookies.txt` for restricted or member-only videos.
+- **⚡ Node.js Integration**: Automatically leverages Node.js to solve YouTube's `n-sig` JavaScript deciphering challenges.
+- **🚀 One-Click Launcher**: Double-click `run.bat` on Windows to start immediately.
 
 ---
 
 ## 📋 Prerequisites
 
-Before running the downloader, ensure the following are installed on your system:
-
 1. **Python 3.10+**: [python.org](https://www.python.org/downloads/)
 2. **FFmpeg** (Required for merging video/audio and MP3 conversion):
-   - **Windows** (using winget):
+   - **Windows** (via winget):
      ```powershell
      winget install Gyan.FFmpeg.Essentials
      ```
-   - **macOS** (using Homebrew):
+   - **macOS** (via Homebrew):
      ```bash
      brew install ffmpeg
      ```
@@ -68,7 +70,7 @@ pip install -r requirements.txt
   python3 main.py
   ```
 
-Downloaded files will be saved in the `downloads/` folder inside the project directory.
+Downloaded files are saved in the `downloads/` directory inside the project.
 
 ---
 
@@ -87,7 +89,7 @@ If a video requires YouTube login verification or is age-restricted:
    ```
 4. Run the program as usual. The downloader will detect the cookies file automatically.
 
-> ⚠️ **Warning**: Never commit or share your `cookies.txt` file publicly. It contains active session credentials. This project's `.gitignore` automatically excludes `cookies.txt`.
+> ⚠️ **Warning**: Never commit or share your `cookies.txt` file publicly. This project's `.gitignore` automatically excludes `cookies.txt`.
 
 ---
 

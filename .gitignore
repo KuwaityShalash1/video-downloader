@@ -1,0 +1,36 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Output downloads
+downloads/
+*.mp4
+*.mkv
+*.webm
+*.mp3
+*.m4a
+*.wav
+
+# CRITICAL: Sensitive credentials & personal cookies
+# Never commit your cookies to GitHub!
+cookies.txt
+*.cookies
+*.session
+
+# IDE & Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini

@@ -11,6 +11,7 @@ ENV/
 
 # Output downloads
 downloads/
+.download-archive.txt
 *.mp4
 *.mkv
 *.webm
@@ -23,6 +24,10 @@ downloads/
 cookies.txt
 *.cookies
 *.session
+
+# Tooling caches
+.pytest_cache/
+.ruff_cache/
 
 # IDE & Editor files
 .vscode/
